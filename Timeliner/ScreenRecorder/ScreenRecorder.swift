@@ -19,7 +19,7 @@ public enum ScreenRecorderError: Error {
 public final class ScreenRecorder: NSObject {
   private let destination: URL
   private let session: AVCaptureSession
-  let output: AVCaptureMovieFileOutput
+  private let output: AVCaptureMovieFileOutput
   private var activity: NSObjectProtocol?
 
   public var onStart: (() -> Void)?

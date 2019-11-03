@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import AVFoundation
 
 enum RecordingState {
     case idle
@@ -34,6 +35,7 @@ class RecordingManager {
     func startRecording() {
         state = .recording
         screenRecorder.start()
+        currentFileCreatedDate = Date()
         if splitterTimer == nil {
             splitterTimer = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
                 guard let `self` = self else { return }
@@ -52,6 +54,7 @@ class RecordingManager {
         
         let realm = try! Realm()
         let screenRecord = ScreenRecord()
+        screenRecord.created = currentFileCreatedDate
         
         do {
             let dateFormatter = DateFormatter()
