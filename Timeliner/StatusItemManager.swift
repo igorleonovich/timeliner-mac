@@ -9,16 +9,17 @@ import Cocoa
 
 class StatusItemManager {
     
-    var eventMonitor: EventMonitor?
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
+    var eventMonitor: EventMonitor?
     
     // MARK: - Setup
     
     func setupMenuIcon() {
         if let button = statusItem.button {
             button.image = NSImage(named: NSImage.flowViewTemplateName)
-            button.action = #selector(toggle(_:))
+            button.target = self
+            button.action = #selector(togglePopover(_:))
         }
     }
     
@@ -26,33 +27,33 @@ class StatusItemManager {
         eventMonitor = EventMonitor(mask: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { [weak self] event in
             guard let `self` = self else { return }
             if self.popover.isShown {
-                self.close(event)
+                self.closePopover(event)
             }
-        }
-        eventMonitor?.start()
+       }
+       eventMonitor?.start()
     }
     
     // MARK: - Actions
     
-    @objc func toggle(_ sender: AnyObject?) {
+    @objc func togglePopover(_ sender: AnyObject?) {
         if popover.isShown {
-            close(sender)
+            closePopover(sender)
         } else {
-            show(sender)
+            showPopover(sender)
         }
     }
 }
 
 private extension StatusItemManager {
     
-    func show(_ sender: AnyObject?) {
+    func showPopover(_ sender: AnyObject?) {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             eventMonitor?.start()
         }
     }
     
-    func close(_ sender: AnyObject?) {
+    func closePopover(_ sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
     }

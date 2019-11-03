@@ -17,11 +17,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItemManager.setupMenuIcon()
         
         let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainViewController") as! MainViewController
+        
         statusItemManager.popover.contentViewController = mainViewController
         
         statusItemManager.setupEventMonitor()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {}
-
+    func applicationWillTerminate(_ aNotification: Notification) {
+        
+    }
+    
 }
