@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Aperture
 import RealmSwift
 
 enum RecordingState {
@@ -16,15 +15,16 @@ enum RecordingState {
 
 class RecordingManager {
     
+    var screenRecorder: ScreenRecorder
+    var processingManager: ProcessingManager!
     var state = RecordingState.idle
-    var aperture: Aperture
-    var splitterTimer: Timer?
     let currentFileURL = URL(fileURLWithPath: "current.mp4")
     var currentFileCreatedDate = Date()
+    var splitterTimer: Timer?
     
     init() {
         do {
-            aperture = try Aperture.init(destination: currentFileURL, framesPerSecond: 24, cropRect: nil, showCursor: true, highlightClicks: false)
+            screenRecorder = try ScreenRecorder.init(destination: currentFileURL, framesPerSecond: 24, cropRect: nil, showCursor: true, highlightClicks: false)
         } catch {
             fatalError("Cannot initialize Aperture")
         }
@@ -33,21 +33,20 @@ class RecordingManager {
     
     func startRecording() {
         state = .recording
-        aperture.start()
+        screenRecorder.start()
         if splitterTimer == nil {
             splitterTimer = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [weak self] _ in
                 guard let `self` = self else { return }
                 self.stopRecording()
-                self.setupAperture()
+                self.setupScreenRecorder()
                 self.startRecording()
             }
         }
-        currentFileCreatedDate = Date()
     }
     
     func stopRecording() {
         state = .idle
-        aperture.stop()
+        screenRecorder.stop()
         
         let fileManager = FileManager.default
         
@@ -65,15 +64,16 @@ class RecordingManager {
         try! realm.write {
             realm.add(screenRecord)
         }
+        processingManager.process()
     }
 }
 
 private extension RecordingManager {
     
     // TODO: Remove the duplication
-    func setupAperture() {
+    func setupScreenRecorder() {
         do {
-            aperture = try Aperture.init(destination: currentFileURL, framesPerSecond: 24, cropRect: nil, showCursor: true, highlightClicks: false)
+            screenRecorder = try ScreenRecorder.init(destination: currentFileURL, framesPerSecond: 24, cropRect: nil, showCursor: true, highlightClicks: false)
         } catch {
             fatalError("Cannot initialize Aperture")
         }

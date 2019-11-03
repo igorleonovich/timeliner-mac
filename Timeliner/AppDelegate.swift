@@ -12,6 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItemManager = StatusItemManager()
     let recordingManager = RecordingManager()
+    let processingManager = ProcessingManager()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -19,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainViewController") as! MainViewController
         mainViewController.recordingManager = recordingManager
+        recordingManager.processingManager = processingManager
         
         statusItemManager.popover.contentViewController = mainViewController
         

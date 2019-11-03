@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "Aperture",
-        "repositoryURL": "https://github.com/wulkano/Aperture.git",
-        "state": {
-          "branch": null,
-          "revision": "2447e76fac46f3317544a367f942356f4f5df21c",
-          "version": "0.2.0"
-        }
-      },
-      {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-cocoa.git",
         "state": {
