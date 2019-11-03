@@ -14,6 +14,7 @@
 		783EA27D236DBB12004A7A47 /* Aperture in Frameworks */ = {isa = PBXBuildFile; productRef = 783EA27C236DBB12004A7A47 /* Aperture */; };
 		783EA27F236DBD9D004A7A47 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EA27E236DBD9D004A7A47 /* EventMonitor.swift */; };
 		78407ECA236ED0860095D85E /* StatusItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78407EC9236ED0860095D85E /* StatusItemManager.swift */; };
+		788DF26A236EF5A000F89E87 /* RecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788DF269236EF5A000F89E87 /* RecordingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		783EA277236DB913004A7A47 /* Timeliner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timeliner.entitlements; sourceTree = "<group>"; };
 		783EA27E236DBD9D004A7A47 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		78407EC9236ED0860095D85E /* StatusItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemManager.swift; sourceTree = "<group>"; };
+		788DF269236EF5A000F89E87 /* RecordingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				783EA26D236DB910004A7A47 /* AppDelegate.swift */,
+				788DF269236EF5A000F89E87 /* RecordingManager.swift */,
 				78407EC9236ED0860095D85E /* StatusItemManager.swift */,
 				783EA27E236DBD9D004A7A47 /* EventMonitor.swift */,
 				783EA26F236DB910004A7A47 /* MainViewController.swift */,
@@ -149,6 +152,7 @@
 				78407ECA236ED0860095D85E /* StatusItemManager.swift in Sources */,
 				783EA27F236DBD9D004A7A47 /* EventMonitor.swift in Sources */,
 				783EA270236DB910004A7A47 /* MainViewController.swift in Sources */,
+				788DF26A236EF5A000F89E87 /* RecordingManager.swift in Sources */,
 				783EA26E236DB910004A7A47 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

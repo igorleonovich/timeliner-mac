@@ -33,7 +33,7 @@ class StatusItemManager {
        eventMonitor?.start()
     }
     
-    // MARK: - Actions
+    // MARK: - UI Actions
     
     @objc func togglePopover(_ sender: AnyObject?) {
         if popover.isShown {

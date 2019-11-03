@@ -9,10 +9,19 @@ import Cocoa
 
 class MainViewController: NSViewController {
 
+    var recordingManager: RecordingManager!
+    
+    @IBOutlet weak var recButton: NSButton!
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayout() {
+        super.viewWillLayout()
+        updateRecButtonTitle()
     }
 
     override var representedObject: Any? {
@@ -20,8 +29,31 @@ class MainViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    // MARK: - UI Actions
 
+    @IBAction func recButtonAction(_ sender: Any) {
+        switch recordingManager.state {
+        case .idle:
+            recordingManager.startRecording()
+        case .recording:
+            recordingManager.stopRecording()
+        }
+        updateRecButtonTitle()
+    }
+    
     @IBAction func closeButtonAction(_ sender: NSButton) {
         NSApp.terminate(self)
+    }
+    
+    // MARK: - Helpers
+    
+    private func updateRecButtonTitle() {
+        switch recordingManager.state {
+        case .idle:
+            recButton.title = "Rec"
+        case .recording:
+            recButton.title = "Stop"
+        }
     }
 }

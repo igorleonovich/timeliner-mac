@@ -11,12 +11,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItemManager = StatusItemManager()
+    let recordingManager = RecordingManager()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         statusItemManager.setupMenuIcon()
         
         let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainViewController") as! MainViewController
+        mainViewController.recordingManager = recordingManager
         
         statusItemManager.popover.contentViewController = mainViewController
         
