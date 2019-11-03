@@ -62,6 +62,40 @@
 			path = ScreenRecorder;
 			sourceTree = "<group>";
 		};
+		781BE58C236F49B800AEC359 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				78407EC9236ED0860095D85E /* StatusItemManager.swift */,
+				788DF269236EF5A000F89E87 /* RecordingManager.swift */,
+				782AB4A4236F2F4C000904DC /* ProcessingManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		781BE58D236F49CD00AEC359 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				782AB4A2236F1703000904DC /* ScreenRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		781BE58E236F49EA00AEC359 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				783EA26F236DB910004A7A47 /* MainViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		781BE58F236F4A0300AEC359 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				783EA27E236DBD9D004A7A47 /* EventMonitor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		783EA25F236DB870004A7A47 = {
 			isa = PBXGroup;
 			children = (
@@ -81,14 +115,12 @@
 		783EA26C236DB910004A7A47 /* Timeliner */ = {
 			isa = PBXGroup;
 			children = (
+				781BE58E236F49EA00AEC359 /* View Controllers */,
+				781BE58D236F49CD00AEC359 /* Models */,
+				781BE58C236F49B800AEC359 /* Managers */,
 				781BE587236F3FC400AEC359 /* ScreenRecorder */,
+				781BE58F236F4A0300AEC359 /* Helpers */,
 				783EA26D236DB910004A7A47 /* AppDelegate.swift */,
-				788DF269236EF5A000F89E87 /* RecordingManager.swift */,
-				782AB4A4236F2F4C000904DC /* ProcessingManager.swift */,
-				782AB4A2236F1703000904DC /* ScreenRecord.swift */,
-				78407EC9236ED0860095D85E /* StatusItemManager.swift */,
-				783EA27E236DBD9D004A7A47 /* EventMonitor.swift */,
-				783EA26F236DB910004A7A47 /* MainViewController.swift */,
 				783EA271236DB912004A7A47 /* Assets.xcassets */,
 				783EA273236DB913004A7A47 /* Main.storyboard */,
 				783EA276236DB913004A7A47 /* Info.plist */,
