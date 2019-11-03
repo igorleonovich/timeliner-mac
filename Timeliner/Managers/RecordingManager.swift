@@ -57,8 +57,7 @@ class RecordingManager {
         screenRecord.created = currentFileCreatedDate
         
         do {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH-mm-ss"
+            let dateFormatter = SecondDateFormatter()
             try fileManager.moveItem(at: currentFileURL, to: URL(fileURLWithPath: "\(dateFormatter.string(from: currentFileCreatedDate)).mp4"))
         } catch {
             print("Can't rename current file")

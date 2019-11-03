@@ -19,6 +19,8 @@
 		783EA275236DB913004A7A47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783EA273236DB913004A7A47 /* Main.storyboard */; };
 		783EA27F236DBD9D004A7A47 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EA27E236DBD9D004A7A47 /* EventMonitor.swift */; };
 		78407ECA236ED0860095D85E /* StatusItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78407EC9236ED0860095D85E /* StatusItemManager.swift */; };
+		7848B117236F4BB00090F927 /* SecondDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B116236F4BB00090F927 /* SecondDateFormatter.swift */; };
+		7848B11A236F4DC50090F927 /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B119236F4DC50090F927 /* NSImage+Extensions.swift */; };
 		788DF26A236EF5A000F89E87 /* RecordingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788DF269236EF5A000F89E87 /* RecordingManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		783EA277236DB913004A7A47 /* Timeliner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timeliner.entitlements; sourceTree = "<group>"; };
 		783EA27E236DBD9D004A7A47 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		78407EC9236ED0860095D85E /* StatusItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemManager.swift; sourceTree = "<group>"; };
+		7848B116236F4BB00090F927 /* SecondDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondDateFormatter.swift; sourceTree = "<group>"; };
+		7848B119236F4DC50090F927 /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 		788DF269236EF5A000F89E87 /* RecordingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				783EA27E236DBD9D004A7A47 /* EventMonitor.swift */,
+				7848B116236F4BB00090F927 /* SecondDateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -115,11 +120,12 @@
 		783EA26C236DB910004A7A47 /* Timeliner */ = {
 			isa = PBXGroup;
 			children = (
-				781BE58E236F49EA00AEC359 /* View Controllers */,
 				781BE58D236F49CD00AEC359 /* Models */,
+				781BE58E236F49EA00AEC359 /* View Controllers */,
 				781BE58C236F49B800AEC359 /* Managers */,
 				781BE587236F3FC400AEC359 /* ScreenRecorder */,
 				781BE58F236F4A0300AEC359 /* Helpers */,
+				7848B118236F4DB20090F927 /* Extensions */,
 				783EA26D236DB910004A7A47 /* AppDelegate.swift */,
 				783EA271236DB912004A7A47 /* Assets.xcassets */,
 				783EA273236DB913004A7A47 /* Main.storyboard */,
@@ -127,6 +133,14 @@
 				783EA277236DB913004A7A47 /* Timeliner.entitlements */,
 			);
 			path = Timeliner;
+			sourceTree = "<group>";
+		};
+		7848B118236F4DB20090F927 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7848B119236F4DC50090F927 /* NSImage+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +225,10 @@
 				783EA270236DB910004A7A47 /* MainViewController.swift in Sources */,
 				781BE58B236F3FEC00AEC359 /* Utils.swift in Sources */,
 				788DF26A236EF5A000F89E87 /* RecordingManager.swift in Sources */,
+				7848B117236F4BB00090F927 /* SecondDateFormatter.swift in Sources */,
 				781BE586236F3F7400AEC359 /* ScreenRecorder.swift in Sources */,
 				782AB4A3236F1703000904DC /* ScreenRecord.swift in Sources */,
+				7848B11A236F4DC50090F927 /* NSImage+Extensions.swift in Sources */,
 				783EA26E236DB910004A7A47 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
