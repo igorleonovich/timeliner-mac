@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782AB4A1236F1636000904DC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 782AB4A0236F1636000904DC /* RealmSwift */; };
+		782AB4A3236F1703000904DC /* ScreenRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782AB4A2236F1703000904DC /* ScreenRecord.swift */; };
 		783EA26E236DB910004A7A47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EA26D236DB910004A7A47 /* AppDelegate.swift */; };
 		783EA270236DB910004A7A47 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783EA26F236DB910004A7A47 /* MainViewController.swift */; };
 		783EA272236DB912004A7A47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783EA271236DB912004A7A47 /* Assets.xcassets */; };
@@ -18,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		782AB4A2236F1703000904DC /* ScreenRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecord.swift; sourceTree = "<group>"; };
 		783EA26A236DB910004A7A47 /* Timeliner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeliner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783EA26D236DB910004A7A47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783EA26F236DB910004A7A47 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782AB4A1236F1636000904DC /* RealmSwift in Frameworks */,
 				783EA27D236DBB12004A7A47 /* Aperture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +67,7 @@
 			children = (
 				783EA26D236DB910004A7A47 /* AppDelegate.swift */,
 				788DF269236EF5A000F89E87 /* RecordingManager.swift */,
+				782AB4A2236F1703000904DC /* ScreenRecord.swift */,
 				78407EC9236ED0860095D85E /* StatusItemManager.swift */,
 				783EA27E236DBD9D004A7A47 /* EventMonitor.swift */,
 				783EA26F236DB910004A7A47 /* MainViewController.swift */,
@@ -92,6 +97,7 @@
 			name = Timeliner;
 			packageProductDependencies = (
 				783EA27C236DBB12004A7A47 /* Aperture */,
+				782AB4A0236F1636000904DC /* RealmSwift */,
 			);
 			productName = Timeliner;
 			productReference = 783EA26A236DB910004A7A47 /* Timeliner.app */;
@@ -122,6 +128,7 @@
 			mainGroup = 783EA25F236DB870004A7A47;
 			packageReferences = (
 				783EA27B236DBB12004A7A47 /* XCRemoteSwiftPackageReference "Aperture" */,
+				782AB49F236F1636000904DC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 783EA26B236DB910004A7A47 /* Products */;
 			projectDirPath = "";
@@ -153,6 +160,7 @@
 				783EA27F236DBD9D004A7A47 /* EventMonitor.swift in Sources */,
 				783EA270236DB910004A7A47 /* MainViewController.swift in Sources */,
 				788DF26A236EF5A000F89E87 /* RecordingManager.swift in Sources */,
+				782AB4A3236F1703000904DC /* ScreenRecord.swift in Sources */,
 				783EA26E236DB910004A7A47 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +356,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		782AB49F236F1636000904DC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.20.0;
+			};
+		};
 		783EA27B236DBB12004A7A47 /* XCRemoteSwiftPackageReference "Aperture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/wulkano/Aperture.git";
@@ -359,6 +375,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		782AB4A0236F1636000904DC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 782AB49F236F1636000904DC /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		783EA27C236DBB12004A7A47 /* Aperture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 783EA27B236DBB12004A7A47 /* XCRemoteSwiftPackageReference "Aperture" */;
