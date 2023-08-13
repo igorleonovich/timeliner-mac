@@ -1,3 +1,3 @@
-# Timeliner (Cocoa)
+# Timeliner (macOS) (Concept)
 
-macOS screen recorder tool with image dynamic detection (concept)
+A macOS screen recorder tool with image dynamic detection
